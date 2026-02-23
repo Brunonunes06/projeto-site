@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Bem-vindo ao Painel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="home-body">
+    <div class="glass-card">
+        <h1 class="welcome-title">Bem-vindo, {{ usuario }}!</h1>
+        <p class="subtitle">Você acessou o painel secreto.</p>
+
+        <div class="dino-container">
+            <!-- GIF do Dinossauro Dançando -->
+            <img src="https://media.tenor.com/PAnB1p0F_rAAAAAC/dinosaur-dancing-with-sunglass.gif"
+                alt="Dinossauro Dançando" class="dino-gif">
+        </div>
+
+        <div class="actions">
+            <a href="{{ url_for('logout') }}" class="btn-logout">Sair do Sistema</a>
+        </div>
+    </div>
+</body>
+
+</html>

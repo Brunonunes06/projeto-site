@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Login - Acesso Seguro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="glass-card">
+        <h2>Entrar no Sistema</h2>
+        <p class="subtitle">Escolha como deseja acessar seu painel.</p>
+
+        <div class="login-content">
+            <!-- Lado do Formulário -->
+            <div class="login-form-side">
+                {% if error %}
+                <div class="error">{{ error }}</div>
+                {% endif %}
+
+                <form method="POST">
+                    <div class="input-group">
+                        <label>Usuário</label>
+                        <input type="text" name="usuario" placeholder="Insira seu usuário" required autocomplete="off">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Senha</label>
+                        <input type="password" name="senha" placeholder="Insira sua senha" required>
+                    </div>
+
+                    <button type="submit">Acessar Painel</button>
+                </form>
+            </div>
+
+            <!-- Lado do QR Code -->
+            <div class="qr-side">
+                <img src="{{ url_for('static', filename='login_qr.png') }}" alt="QR Code Login" class="qr-image">
+                <p class="qr-label">Escaneie para ir direto<br>ao painel principal</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
